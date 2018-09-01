@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 #
 # S2I assemble script for the 'golang-centos7' image.
 # The 'assemble' script builds your application source so that it is ready to run.
