@@ -24,4 +24,10 @@ cp -Rf /tmp/src/. ./
 
 echo "---> Building application from source..."
 export PATH="$PATH:/usr/local/go/bin"
-go build 
+echo "pwd"
+pwd
+echo "ls -la"
+ls -la
+echo "ls -la ../main"
+ls -la ../main
+go build -o ../main
