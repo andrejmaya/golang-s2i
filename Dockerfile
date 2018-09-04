@@ -14,6 +14,7 @@ LABEL io.k8s.description="Platform for building golang applications. Based on GO
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="builder,golang"
 
+RUN yum install -y telnet 
 # Install go
 RUN curl https://storage.googleapis.com/golang/go${GOLANG_VERSION}.linux-amd64.tar.gz -o /tmp/go.tar.gz && tar -C /usr/local -zxf /tmp/go.tar.gz
 
