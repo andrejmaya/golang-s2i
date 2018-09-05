@@ -14,9 +14,10 @@ LABEL io.k8s.description="Platform for building golang applications. Based on GO
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="builder,golang"
 
-RUN yum install -y telnet 
 # Install go
 RUN curl https://storage.googleapis.com/golang/go${GOLANG_VERSION}.linux-amd64.tar.gz -o /tmp/go.tar.gz && tar -C /usr/local -zxf /tmp/go.tar.gz
+
+RUN yum install -y git && /usr/local/go/bin/go get -u github.com/gobuffalo/packr/...
 
 # Copy the S2I scripts to /usr/libexec/s2i, since openshift/base-centos7 image
 # sets io.openshift.s2i.scripts-url label that way, or update that label
